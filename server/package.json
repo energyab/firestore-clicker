@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "snapshot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "keywords": [
+    "firebase"
+  ],
+  "author": "Andrew",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "firebase-admin": "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15"
+  }
+}
