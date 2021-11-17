@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "./firestore-config";
 import { collection, onSnapshot } from "firebase/firestore"
+import getClick from './hook/http.hook'
 
 const colRef = collection(db, 'count')
 
@@ -12,31 +13,15 @@ function App() {
         setCount(abc[0].count)
       })
 
-const KickApi = () => {
-    try {
-      fetch("/new_click")
-    } catch (e) {
-      console.log(e.message)
-    }
-  }
-
-  const ClearApi = () => {
-    try {
-      fetch("/clear")
-    } catch (e) {
-      console.log(e.message)
-    }
-  }
-
   return (
     <div className="App">
       <h1>
         Counter: {count}
       </h1>
-      <button onClick={KickApi}>
+      <button onClick={ () => {getClick('/new_click')} }>
         Api Kicked {count} times
       </button>
-      <button onClick={ClearApi}>
+      <button onClick={ () => {getClick('/clear')} }>
         CleanAPI
       </button>
     </div>
